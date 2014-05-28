@@ -100,7 +100,7 @@ var
 	rvalidescape = /\\(?:["\\\/bfnrt]|u[\da-fA-F]{4})/g,
 	rvalidtokens = /"[^"\\\r\n]*"|true|false|null|-?(?:\d+\.|)\d+(?:[eE][+-]?\d+|)/g,
 
-	// Matches dashed string for camelizing
+	// IsMatch dashed string for camelizing
 	rmsPrefix = /^-ms-/,
 	rdashAlpha = /-([\da-z])/gi,
 

@@ -18,12 +18,15 @@
                 </button>
                 @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse pull-left">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
                 </ul>
             </div>
+            <form class="navbar-collapse pull-right navbar-form" id="search-form">
+                <input type="text" placeholder="Search" data-bind="value: term"/><button data-bind="click: search" class="btn btn-primary btn-sm">Search</button>
+            </form>
         </div>
     </div>
     <div class="container body-content">
@@ -35,7 +38,9 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/knockout")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script src="~/public/js/global/SearchViewModel.js"></script>
 </body>
 </html>

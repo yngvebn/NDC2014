@@ -1,0 +1,30 @@
+﻿@model object
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+<h4>You searched for @Model</h4>
+<div id="search-results">
+    <div data-bind="ifnot: isLoading">
+        <h5>Your search returned <span data-bind="text: results().length"></span> result(s)</h5>
+    </div>
+    <div>
+        <em data-bind="if: isLoading">Hang on while we fetch your searchresults...</em>
+        <ul class="search-results clearfix" data-bind="foreach: results, visible: !isLoading()">
+            <li>
+                <strong data-bind="text: title"></strong>
+                <em data-bind="text: description"></em>
+            </li>
+        </ul>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/public/js/search/SearchResultsViewModel.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            ko.applyBindings(new SearchResultsViewModel('@Model'), document.getElementById('search-results'));
+        });
+    </script>
+}

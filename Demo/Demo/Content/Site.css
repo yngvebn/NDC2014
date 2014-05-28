@@ -40,3 +40,18 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+.search-results {
+  margin: 2em 0;
+  list-style-type: none;
+  clear: right;
+}
+.search-results li {
+  float: left;
+  width: 150px;
+  height: 150px;
+  margin-right: 10px;
+  border: 1px solid #333;
+  border-radius: 2px;
+  
+}
