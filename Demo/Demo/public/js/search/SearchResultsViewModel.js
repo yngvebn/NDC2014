@@ -1,4 +1,4 @@
-﻿function SearchResultsViewModel(term) {
+﻿function SearchResultsViewModel() {
     var self = this;
 
     self.isLoading = ko.observable(true);
@@ -17,7 +17,11 @@
             self.isLoading(false);
         });
     }
-
-    search(term);
+    var queryString = {};
+    window.location.search.replace(
+        new RegExp("([^?=&]+)(=([^&]*))?", "g"),
+        function ($0, $1, $2, $3) { queryString[$1] = $3; }
+    );
+    search(queryString.q);
 
 }

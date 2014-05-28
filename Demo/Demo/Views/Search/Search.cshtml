@@ -1,5 +1,4 @@
-﻿@model object
-@{
+﻿@{
     ViewBag.Title = "Search";
 }
 
@@ -24,7 +23,7 @@
     <script src="~/public/js/search/SearchResultsViewModel.js"></script>
     <script type="text/javascript">
         $(function() {
-            ko.applyBindings(new SearchResultsViewModel('@Model'), document.getElementById('search-results'));
+            ko.applyBindings(new SearchResultsViewModel(), document.getElementById('search-results'));
         });
     </script>
 }
