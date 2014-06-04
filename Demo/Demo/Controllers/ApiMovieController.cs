@@ -13,8 +13,9 @@ namespace Demo.Controllers
         }
 
         [Route("movies")]
-        public IHttpActionResult Get(int take = 5)
+        public IHttpActionResult Get(int take = 0)
         {
+            if (take == 0) take = int.MaxValue;
             return Ok(MovieRepository.Get(take));
         }
 
