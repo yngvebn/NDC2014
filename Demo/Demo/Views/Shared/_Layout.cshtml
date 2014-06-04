@@ -6,8 +6,9 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+ 
 </head>
-<body>
+<body ng-app="movies">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -40,6 +41,8 @@
     @Scripts.Render("~/bundles/knockout")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/public/movies/app.js"></script>
     <script src="~/public/js/global/SearchViewModel.js"></script>
 </body>
 </html>
