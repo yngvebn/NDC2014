@@ -1,18 +1,28 @@
-﻿<div class="top-five" id="top-five">
-    <ul class="search-results clearfix" data-bind="foreach: movies, visible: !isLoading()">
-        <li>
-            <a href="" data-bind="attr: { href: '/movie/details?title='+title }">
-                <img height="239" data-bind="attr: { src: '/movie/poster/'+ title }" />
+﻿<div class="top-five" id="top-five" ng-controller="MovieList">
+    <ul class="genre-list">
+        <li class="genre-list-item selectable"
+            ng-repeat="genre in genres"
+            ng-class="{selected: $parent.selectedGenre == genre}"
+            ng-click="toggleGenre(genre)">{{ genre }}</li>
+    </ul>
+    <ul class="search-results clearfix">
+        <li ng-repeat="movie in movies | filter:selectedGenre">
+            <a ng-href="/movie/details?title={{movie.title}}">
+                <img height="239" ng-src="/movie/poster/{{movie.title}}" />
                 <p>
-                    <strong data-bind="text: title"></strong>
+                    <strong>{{ movie.title }}</strong>
                 </p>
             </a>
         </li>
     </ul>
+    
 </div>
+
+
 
 @section scripts{
     
+<script src="~/public/movies/FrontPageMovieList/MovieList.js"></script>
     <script src="~/public/js/top5/TopFiveViewModel.js"></script>
     
     <script>
