@@ -156,6 +156,7 @@
     <Content Include="public\js\search\SearchResultsViewModel.js" />
     <Content Include="public\js\top5\TopFiveViewModel.js" />
     <Content Include="public\movies\app.js" />
+    <Content Include="public\movies\FrontPageMovieList\MovieList.js" />
     <Content Include="Scripts\angular-locale_no.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
@@ -182,6 +183,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\lodash.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
