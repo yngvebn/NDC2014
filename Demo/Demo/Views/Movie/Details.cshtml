@@ -3,9 +3,14 @@
     ViewBag.Title = "Details";
 }
 <div id="movie-details">
-    <h2 data-bind="text: title"></h2>
-    <p data-bind="text: description"></p>
-    <img data-bind="attr: { src: '/movie/poster/'+ title() }" />
+    <section data-bind="with: movie">
+        <h2 data-bind="text: title"></h2>
+        <ul class="genre-list" data-bind="foreach: genres">
+            <li class="genre-list-item" data-bind="text: $data"></li>
+        </ul>
+        <p data-bind="text: description"></p>
+        <img data-bind="attr: { src: '/movie/poster/'+ title }" />
+    </section>
 </div>
 @section scripts{
     <script src="~/public/js/movie/MovieDetailsViewModel.js"></script>    

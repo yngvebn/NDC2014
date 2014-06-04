@@ -5,15 +5,8 @@
     self.results = ko.observableArray([]);
 
     function search(searchTerm) {
-        $.get('/api/v1/search?term=' + searchTerm, function(result) {
-            var results = ko.utils.arrayMap(result, function(item) {
-                return {
-                    title: item.Title,
-                    description: item.Description,
-                };
-            });
-
-            self.results(results);
+        $.get('/api/v1/search?term=' + searchTerm, function (result) {
+            self.results(result);
             self.isLoading(false);
         });
     }

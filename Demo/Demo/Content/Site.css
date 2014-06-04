@@ -58,3 +58,20 @@ input[type="checkbox"].input-validation-error {
 .top-five {
   overflow: hidden;
 }
+
+.genre-list {
+  list-style: none;
+  overflow: hidden;
+  clear: right;
+  margin: 0;
+  padding: 0;
+}
+
+.genre-list-item {
+  float: left;
+  background-color: #eee;
+  color: #888;
+  border-radius: 4px;
+  padding: 7px;
+  margin-right: 5px;
+}

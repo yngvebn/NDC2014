@@ -6,20 +6,22 @@ namespace Demo.Controllers
     {
         public string Title { get; set; }
         public string Description { get; set; }
+        public string[] Genres { get; set; }
 
         public MovieViewModel()
         {
             
         }
-        private MovieViewModel(string title, string description)
+        private MovieViewModel(string title, string description, string[] genres)
         {
             Title = title;
             Description = description;
+            Genres = genres;
         }
 
-        public static MovieViewModel Create(string title, string description)
+        public static MovieViewModel Create(string title, string description, string[] genres)
         {
-            return new MovieViewModel(title, description);
+            return new MovieViewModel(title, description, genres);
         }
 
         public bool IsMatch(string term)

@@ -3,10 +3,10 @@
 }
 
 <h2>Search</h2>
-<h4>You searched for @Model</h4>
+<em>You searched for '@Model'</em>
 <div id="search-results">
     <div data-bind="ifnot: isLoading">
-        <h5>Your search returned <span data-bind="text: results().length"></span> result(s)</h5>
+        <strong>Your search returned <span data-bind="text: results().length"></span> result(s)</strong>
     </div>
     <div>
         <em data-bind="if: isLoading">Hang on while we fetch your searchresults...</em>
