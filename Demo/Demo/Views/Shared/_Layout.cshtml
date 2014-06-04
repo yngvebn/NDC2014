@@ -16,7 +16,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
+                @Html.ActionLink("My Movies", "Index", "Home", null, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse pull-left">
                 <ul class="nav navbar-nav">
@@ -24,17 +24,16 @@
                     <li>@Html.ActionLink("New Movie", "Add", "Movie", new { area = "" }, null)</li>
                 </ul>
             </div>
-            <form class="navbar-collapse pull-right navbar-form" id="search-form">
-                <input type="text" placeholder="Search" data-bind="value: term"/><button data-bind="click: search" class="btn btn-primary btn-sm">Search</button>
+            <form class="navbar-collapse form-inline pull-right navbar-form" id="search-form">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="e.g. Jurassic Park" data-bind="value: term" />
+                </div>
+                <button data-bind="click: search" class="btn btn-primary">Search</button>
             </form>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

@@ -48,10 +48,13 @@ input[type="checkbox"].input-validation-error {
 }
 .search-results li {
   float: left;
-  width: 150px;
-  height: 150px;
   margin-right: 10px;
-  border: 1px solid #333;
+  width: 214px;
+  height: 270px;
   border-radius: 2px;
   
+}
+
+.top-five {
+  overflow: hidden;
 }

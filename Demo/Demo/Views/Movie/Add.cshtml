@@ -4,17 +4,22 @@
 }
 
 
-<fieldset id="create-movie">
-    <legend>Add a new movie to the catalog</legend>
+<div id="create-movie">
+    <h2>Add a new movie to the catalog</h2>
     <form data-bind="submit: save">
-        <label for="title">Title</label>
-        <input type="text" name="title" data-bind="value: title" placeholder="Type something…">
         
-        <label for="description">Description</label>
-        <textarea name="description" data-bind="value: description" placeholder="Type something…"></textarea>
-        <button type="submit">Save</button>  
+        <div class="form-group">
+            <input type="text" name="title" class="input-lg form-control" data-bind="value: title" placeholder="e.g. The Lego Movie">
+        </div>
+        <div class="form-group">
+            <textarea name="description" class="form-control" rows="10" data-bind="value: description" placeholder="What's it about?'"></textarea>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+
     </form>
-</fieldset>
+</div>
 
 @section scripts{
     

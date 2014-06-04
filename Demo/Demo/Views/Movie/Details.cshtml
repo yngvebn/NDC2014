@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+<div id="movie-details">
+    <h2 data-bind="text: title"></h2>
+    <p data-bind="text: description"></p>
+    <img data-bind="attr: { src: '/movie/poster/'+ title() }" />
+</div>
+@section scripts{
+    <script src="~/public/js/movie/MovieDetailsViewModel.js"></script>    
+    <script>
+        ko.applyBindings(new MovieDetailsViewModel(), document.getElementById('movie-details'));
+    </script>
+}
+

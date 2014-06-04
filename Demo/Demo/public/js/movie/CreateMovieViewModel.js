@@ -7,7 +7,7 @@
     self.save = function () {
         self.isSaving(true);
         $.post('/api/v1/movie', { title: self.title(), description: self.description() }, function() {
-            alert('saved!');
+            window.location = '/movie/details?title=' + self.title();
             self.isSaving(false);
         });
     }

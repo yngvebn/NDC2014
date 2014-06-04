@@ -12,8 +12,12 @@
         <em data-bind="if: isLoading">Hang on while we fetch your searchresults...</em>
         <ul class="search-results clearfix" data-bind="foreach: results, visible: !isLoading()">
             <li>
-                <strong data-bind="text: title"></strong>
-                <em data-bind="text: description"></em>
+                <a href="" data-bind="attr: { href: '/movie/details?title='+title }">
+                    <img height="239" data-bind="attr: { src: '/movie/poster/'+ title }" />
+                    <p>
+                        <strong data-bind="text: title"></strong>
+                    </p>
+                </a>
             </li>
         </ul>
     </div>

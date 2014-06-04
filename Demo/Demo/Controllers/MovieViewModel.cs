@@ -24,7 +24,7 @@ namespace Demo.Controllers
 
         public bool IsMatch(string term)
         {
-            return Title.ToLower().Contains(term.ToLower()) || Description.ToLower().Contains(term.ToLower());
+            return Title.ToLower().Contains(term.ToLower()) || (Description ?? "").ToLower().Contains(term.ToLower());
         }
     }
 }

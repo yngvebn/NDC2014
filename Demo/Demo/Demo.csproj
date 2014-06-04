@@ -133,6 +133,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\ApiMovieController.cs" />
     <Compile Include="Controllers\ApiSearchController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
@@ -151,7 +152,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="public\js\movie\CreateMovieViewModel.js" />
+    <Content Include="public\js\movie\MovieDetailsViewModel.js" />
     <Content Include="public\js\search\SearchResultsViewModel.js" />
+    <Content Include="public\js\top5\TopFiveViewModel.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -191,6 +194,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Search\Search.cshtml" />
     <Content Include="Views\Movie\Add.cshtml" />
+    <Content Include="Views\Movie\Details.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
