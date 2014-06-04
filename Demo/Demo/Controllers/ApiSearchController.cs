@@ -14,7 +14,7 @@ namespace Demo.Controllers
     {
 
         [Route("search"), HttpGet]
-        public IEnumerable<MovieViewModel> Search(string term)
+        public IEnumerable<dynamic> Search(string term)
         {
             return MovieRepository.Search(term);
         }
@@ -22,14 +22,18 @@ namespace Demo.Controllers
 
     public static class MovieRepository
     {
-        public static IEnumerable<MovieViewModel> Search(string term)
+        public static IEnumerable<dynamic> Search(string term)
         {
-            return Movies.Where(movie => movie.IsMatch(term)).ToList();
+            term = term.ToUpper();
+            List<dynamic> objects = Movies.Where(movie => movie.title.ToString().ToUpper().Contains(term) ||
+                                                 movie.description.ToString().ToUpper().Contains(term)
+                ).ToList();
+            return objects;
         }
 
-        private static List<MovieViewModel> _movies = new List<MovieViewModel>();
+        private static List<dynamic> _movies = new List<dynamic>();
         private static bool _stale = true;
-        private static List<MovieViewModel> Movies
+        private static IEnumerable<dynamic> Movies
         {
             get
             {
@@ -38,18 +42,18 @@ namespace Demo.Controllers
                 string file = HttpContext.Current.Server.MapPath("~/app_data/movies.json");
                 if (File.Exists(file))
                 {
-                    _movies = JsonConvert.DeserializeObject<List<MovieViewModel>>(File.ReadAllText(file));
+                    _movies = JsonConvert.DeserializeObject<List<dynamic>>(File.ReadAllText(file));
                 }
                 else
                 {
-                    _movies = new List<MovieViewModel>();
+                    _movies = new List<dynamic>();
                 }
                 _stale = false;
                 return _movies;
             }
         }
 
-        public static MovieViewModel Add(MovieViewModel movieViewModel)
+        public static dynamic Add(dynamic movieViewModel)
         {
             _movies.Add(movieViewModel);
             Commit();
@@ -69,13 +73,13 @@ namespace Demo.Controllers
             _stale = true;
         }
 
-        public static MovieViewModel Get(string movie)
+        public static dynamic Get(string movie)
         {
-            return Movies.Single(m => m.Title.Equals(movie, StringComparison.InvariantCultureIgnoreCase));
+            return Movies.Single(m => m.title.ToString().Equals(movie, StringComparison.InvariantCultureIgnoreCase));
         }
 
 
-        public static IEnumerable<MovieViewModel> Get(int take)
+        public static IEnumerable<dynamic> Get(int take)
         {
             return Movies.Take(take);
         }
