@@ -40,9 +40,11 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/knockout")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    
     <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/lodash.js"></script>
     <script src="~/public/movies/app.js"></script>
+    @RenderSection("scripts", required: false)
     <script src="~/public/js/global/SearchViewModel.js"></script>
 </body>
 </html>
